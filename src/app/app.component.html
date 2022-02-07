@@ -1,0 +1,16 @@
+
+<div class="clock">
+  <div class="analog-clock">
+    <div class="hour hand" [ngStyle]="hourHandStyle"></div>
+    <div class="minute hand" [ngStyle]="minuteHandStyle"></div>
+    <div class="second hand" [ngStyle]="secondHandStyle"></div>
+    <div class="center-circle"></div>
+  </div>
+  <div class="digital-clock">{{format(hour)}}:{{format(minute)}}:{{format(second)}}</div>
+</div>
+<div class="update-time">
+  <input class="field-length" placeholder="HH" (keyup)="onChangeHourCheck($event)" [(ngModel)]="newHour"><b>:</b>
+  <input class="field-length" placeholder="MM" (keyup)="onChangeMinuteCheck($event)" [(ngModel)]="newMinute"><b>:</b>
+  <input class="field-length" placeholder="SS" (keyup)="onChangeSecondCheck($event)" [(ngModel)]="newSecond">
+  &nbsp;<button (click)="updateTime()">Update Time</button>
+</div>
